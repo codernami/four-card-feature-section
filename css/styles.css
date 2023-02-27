@@ -1,0 +1,142 @@
+:root {
+    --bg-body: #FAFAFA;
+    --light-text:#AAABB3;
+    --bold-text: #4F4E5D;
+    --white:  #FFFFFF;
+    --cyan:#4FCDCD;
+    --red: #D55C60;
+    --orange:#F4AE56; 
+    --blue: #5A9CE5;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--light-text);
+    background-color: var(--bg-body);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+}
+
+.header {
+    text-align: center;
+    margin: 4rem .9rem 2.5rem .9rem;
+}
+
+.header__title {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--light-text);
+    margin: 0;
+}
+
+.header__subtitle {
+    font-size: 1.3rem;
+    color: var(--bold-text);
+    font-weight: 600;
+    margin-top: .8rem;
+}
+
+.header__text {
+    color: var(--light-text);
+    width: 312px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards {
+    display: grid;
+    margin-bottom: 5rem;
+}
+
+.card {
+    width: 300px;
+    height: 230px;
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px #83a6d288;
+    position: relative;
+}
+
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+/* use before after for upper lines */
+.card--cyan::before {
+    background-color: var(--cyan);
+}
+.card--red::before {
+    background-color: var(--red);
+}
+.card--orange::before {
+    background-color: var(--orange);
+}
+.card--blue::before {
+    background-color: var(--blue);
+}
+
+.card__title {
+    font-weight: bold;
+    color: var(--bold-text);
+}
+
+.card__text {
+    color: var(--light-text);
+}
+
+
+/* use after to load icons */
+.card:first-child::after {
+    --icon: url(/images/icon-supervisor.svg);
+}
+
+.card:nth-child(2)::after {
+    --icon: url(/images/icon-team-builder.svg);
+}
+
+.card:nth-child(3)::after {
+    --icon: url(/images/icon-karma.svg);
+}
+
+.card:last-child::after {
+    --icon: url(/images/icon-calculator.svg);
+}
+
+/* use icons */
+.card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 100%;
+    height: 200px;
+    background-image: var(--icon);
+    background-repeat: no-repeat;
+    background-position: 90% bottom;
+}
+
+.footer {
+    padding: 1rem .5rem;
+}
+
+.footer__attribution {
+    font-size: .7rem;
+    text-align: center;
+    color: var(--bold-text);
+}
+
+.footer__link {
+    color: hsl(214, 57%, 69%);
+} 
