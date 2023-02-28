@@ -1,19 +1,19 @@
 :root {
-    --bg-body: #FAFAFA;
-    --light-text:#AAABB3;
-    --bold-text: #4F4E5D;
+    --very-light-gray: hsl(0, 0%, 98%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%); 
+    --blue: hsl(212, 86%, 64%);
     --white:  #FFFFFF;
-    --cyan:#4FCDCD;
-    --red: #D55C60;
-    --orange:#F4AE56; 
-    --blue: #5A9CE5;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     color: var(--light-text);
-    background-color: var(--bg-body);
+    background-color: var(--very-light-gray);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,19 +29,19 @@ body {
 .header__title {
     font-size: 1.5rem;
     font-weight: normal;
-    color: var(--light-text);
+    color: var(--grayish-blue);
     margin: 0;
 }
 
 .header__subtitle {
     font-size: 1.3rem;
-    color: var(--bold-text);
+    color: var(--very-dark-blue);
     font-weight: 600;
     margin-top: .8rem;
 }
 
 .header__text {
-    color: var(--light-text);
+    color: var(--grayish-blue);
     width: 312px;
     margin-left: auto;
     margin-right: auto;
@@ -89,29 +89,29 @@ body {
 
 .card__title {
     font-weight: bold;
-    color: var(--bold-text);
+    color: var(--very-dark-blue);
 }
 
 .card__text {
-    color: var(--light-text);
+    color: var(--grayish-blue);
 }
 
 
 /* use after to load icons */
 .card:first-child::after {
-    --icon: url(/images/icon-supervisor.svg);
+    --icon: url(../images/icon-supervisor.svg);
 }
 
 .card:nth-child(2)::after {
-    --icon: url(/images/icon-team-builder.svg);
+    --icon: url(../images/icon-team-builder.svg);
 }
 
 .card:nth-child(3)::after {
-    --icon: url(/images/icon-karma.svg);
+    --icon: url(../images/icon-karma.svg);
 }
 
 .card:last-child::after {
-    --icon: url(/images/icon-calculator.svg);
+    --icon: url(../images/icon-calculator.svg);
 }
 
 /* use icons */
@@ -126,17 +126,3 @@ body {
     background-repeat: no-repeat;
     background-position: 90% bottom;
 }
-
-.footer {
-    padding: 1rem .5rem;
-}
-
-.footer__attribution {
-    font-size: .7rem;
-    text-align: center;
-    color: var(--bold-text);
-}
-
-.footer__link {
-    color: hsl(214, 57%, 69%);
-} 
