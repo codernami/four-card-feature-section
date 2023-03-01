@@ -1,0 +1,134 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+:root {
+    --very-light-gray: hsl(0, 0%, 98%);
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --light-grayish-blue: hsl(229, 6%, 74%);
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%); 
+    --blue: hsl(212, 86%, 64%);
+    --white: #FFF;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: var(--very-light-gray);
+	font-family: 'Poppins', sans-serif;
+    font-size: clamp(14px, 3vw, 16px);
+    font-weight: 400;
+}
+/****************************
+ - LAYOUT
+ ***************************/
+.container {
+	display: grid;
+	grid-template-columns: 310px;
+	justify-items: center;
+	padding: 3rem 0;	
+}
+
+/****************************
+ - HEADER
+ ***************************/
+.header {
+	text-align: center;
+}
+.header__title {
+	padding-bottom: .5rem;
+	font-size: 26px;
+    font-weight: 200;
+    color: var(--grayish-blue);
+}
+.header__subtitle {
+ 	font-size: 25px;  
+ 	font-weight: 600;
+    color: var(--very-dark-blue);
+}
+.header__text {
+	padding: 1rem;
+	margin-bottom: 4rem;
+    color: var(--grayish-blue);
+   	line-height: 1.5;
+   	max-width: 500px;
+}
+/****************************
+ - CARDS
+ ***************************/
+.card {
+    width: 300px;
+    height: 220px;
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px #83a6d288;
+    position: relative;
+}
+/* cards top color lines*/
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.card--cyan::before {
+    background-color: var(--cyan);
+}
+.card--red::before {
+    background-color: var(--red);
+}
+.card--orange::before {
+    background-color: var(--orange);
+}
+.card--blue::before {
+    background-color: var(--blue);
+}
+
+.card__title {
+	margin: 1rem 0;
+    font-weight: 600;
+    color: var(--very-dark-blue);
+}
+.card__text {
+    color: var(--light-grayish-blue);
+    line-height: 1.5;
+    max-width: 260px;
+}
+
+/* use after to load icons */
+.card--cyan::after {
+	--icon: url(../images/icon-supervisor.svg);
+}
+.card--red::after {
+    --icon: url(../images/icon-team-builder.svg);
+}
+.card--orange::after {
+    --icon: url(../images/icon-karma.svg);
+}
+.card--blue::after {
+    --icon: url(../images/icon-calculator.svg);
+}
+
+/* use icons */
+.card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 100%;
+    height: 200px;
+    background-image: var(--icon);
+    background-repeat: no-repeat;
+    background-position: 90% bottom;
+}
